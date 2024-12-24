@@ -46,15 +46,15 @@ app.post("/login", (req, res) => {
   }
 
   // SQL query to check if the user credentials exist in the database
-  const query = `SELECT * FROM users WHERE username = ?`;
-  db.query(query, [username], (err, result) => {
+  const query = `SELECT * FROM users WHERE username = ?`; // check if the user with provided username exists in users or not
+  db.query(query, [username], (err, result) => { // its executes the query to search for username in the database
     if (err) {
       // Check if an error occurred during query execution
       console.error("Error checking user", err); // Log the error to the console
       return res.status(500).json({ message: "Server error" }); // Send 500 server error response
     }
 
-    if (result.length > 0) {
+    if (result.length > 0) { // if thequery finds any matching user that means result is not 0 then it proceeds to check its password 
       // If user exists, compare the password directly
       const storedPassword = result[0].password; // Get the stored password
 
