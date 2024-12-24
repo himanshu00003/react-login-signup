@@ -1,3 +1,9 @@
+## GitHub
+1. git add .
+2. git commit -m "your message"
+3. git push
+4. git push origin main
+
 ## MySQL
 Terminal command - 
 1. mysql -u root -p
