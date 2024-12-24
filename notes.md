@@ -12,6 +12,9 @@ Terminal command -
 - MySQL
 - bcrypt
 
+## NodeJS
+- It is javascript runtime environment that allows us to execute javascript code outside of a web browser.
+
 ## Express
 - It is NodeJs framewor used to create API's  and handle server side logic.
 - It provides utilities to manage HTTPS requests, responses and middleware.
