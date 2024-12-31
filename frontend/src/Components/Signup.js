@@ -7,12 +7,13 @@ const Signup = () => {
   const [message, setMessage] = useState(""); // state for message
 
   const handleSignup = (e) => {
-    // function to handle form submission
     e.preventDefault(); // prevent default form submission
     if (username && password) {
-      // if username and password are correct
       axios
-        .post("http://localhost:5002/signup", { username, password }) // then send post request to backend with username and password
+        .post("/signup", {
+          username,
+          password,
+        }) // fix syntax here
         .then((response) => {
           setMessage("User registered successfully!"); // shows this message if correct
         })

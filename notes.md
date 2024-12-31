@@ -47,3 +47,44 @@ Terminal command -
 - 500 Internal Server Error
 - 401 Unauthorized
 - 201 - Created
+
+
+## React Router Class
+- React Router is used for navigating between different components in a react application.
+- They key components are -
+  - BrowserRouter - Provides routing context for the app.
+  - Route - Defines the route.
+  - Link - Used to create navigation links.
+
+## HTTP Codes
+- Informational Responses - (100-199)
+- Successfull Responses - (200-299)
+- Redirectional Responses - (300-399)
+- Client Server Responses - (400-499)
+- Server Error Responses - (500-599)
+
+## React Router
+- React Router is a library for react that enables navigation between different pages. It updates the browser's URL and renders the content without reloading the page.
+
+## React Router Wrapper
+
+It is a component which wraps our application and enables navigation between different pages in React App without refreshing the page.
+
+
+## Different types of Deployment Environments and their significance
+4 Types - 
+
+1. Development - Used for development and testing.
+2. Staging - A pre - production environment used for final testing before going live.
+3. Production - Live environment where app runs for end users.
+4. Testing - For running automated tests.
+
+
+
+
+
+
+5. React router class
+6. HTTP status codes and their significance
+7. Different types of deployment environments and their significance
+8. what is .env file and how to use it
