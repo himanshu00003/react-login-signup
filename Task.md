@@ -127,3 +127,23 @@ They also help us for debugging.
 Status codes are essential for communication between the client and the server. 
 
 
+## What is the difference between react JS and NodeJs?
+
+ReactJS
+<br>
+- It is a javascript library for building user interfaces.
+- It is mainly used in frontend and was created by Facebook.
+- With the use of ReactJS we can create Dynamic UI comnponents like buttons and dynamic pages.
+- We can also include libraries like React Router for internal browsing in a website.
+- It communicates with server to fetch/update data.
+  
+<br>
+
+NodeJS
+
+- It is a not a library or framework it is a runtime environment that allows javascript to run on server side.
+- It is mainly used in backed part of out application.
+- It is used to build server logic
+- It creates and manages API to serve data to the client.
+- We use npm to download our packages.
+- 
