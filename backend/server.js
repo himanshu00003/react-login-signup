@@ -80,7 +80,7 @@ app.post("/login", (req, res) => {
 
 // Start the server
 
-const PORT = process.env.PORT || 5002; // default is 5002
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`); // Log a message indicating the server is running
+const BACKEND_PORT = process.env.BACKEND_PORT || 5002; // default is 5002
+app.listen(BACKEND_PORT, () => {
+  console.log(`Server is running on port ${BACKEND_PORT}`); // Log a message indicating the server is running
 });

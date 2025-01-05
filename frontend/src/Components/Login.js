@@ -13,7 +13,7 @@ const Login = () => {
         .post("/login", {
           username,
           password,
-        }) // fix syntax here
+        })
         .then((response) => {
           setMessage("Login Successful"); // shows this message if correct
         })

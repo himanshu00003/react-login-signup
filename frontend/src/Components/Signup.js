@@ -13,7 +13,7 @@ const Signup = () => {
         .post("/signup", {
           username,
           password,
-        }) // fix syntax here
+        }) 
         .then((response) => {
           setMessage("User registered successfully!"); // shows this message if correct
         })
