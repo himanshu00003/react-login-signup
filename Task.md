@@ -158,4 +158,15 @@ or
 <br>
 Bcrypt is a password hashing library which stores out password by using one way hashing algorithm and adding a unique salt to each password. It is used in our databases.
 
+Steps - 
 
+- Install bcrypt package
+- Import package in our file
+- Add saltrounds [bcrypt uses a mechanism known as salting. The highes the number of saltRounds, more secure it gets but it slows hashing process. ]
+- We should always use asynchronous methods for hashing to avoid blockage [commonly used number is 10]
+- use bcrypt.compare() to check plaintext password against hashed password.
+
+Note
+- We should never store plaintext passwords it compromises our security.
+- Hashes are one-way functions. So they can't be decrypted.
+- We should add error handling for both hashing and comparing

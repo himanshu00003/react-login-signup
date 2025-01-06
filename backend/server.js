@@ -15,7 +15,6 @@ app.get("/", (req, res) => {
   res.send("Hello working");
 });
 // Post route for user signup
-// POST route for user signup
 app.post("/signup", async (req, res) => {
   const { username, password } = req.body; // Extract username and password from the request body
 
