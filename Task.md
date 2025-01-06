@@ -146,4 +146,16 @@ NodeJS
 - It is used to build server logic
 - It creates and manages API to serve data to the client.
 - We use npm to download our packages.
-- 
+  
+
+
+## Bcrypt
+
+- Bcrypt is a tool to secure passwords in our app.
+- Instead of storing passwords directly , we use bcrypt to hash our passwords. Even if someone hacks our database, they can't figure out our original password
+<br>
+or
+<br>
+Bcrypt is a password hashing library which stores out password by using one way hashing algorithm and adding a unique salt to each password. It is used in our databases.
+
+
