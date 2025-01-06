@@ -5,15 +5,15 @@ const Signup = () => {
   const [username, setUsername] = useState(""); // state for username
   const [password, setPassword] = useState(""); // state for password
   const [message, setMessage] = useState(""); // state for message
-
+  
   const handleSignup = (e) => {
     e.preventDefault(); // prevent default form submission
     if (username && password) {
       axios
-        .post("/signup", {
+        .post(`${process.env.REACT_APP_HOST}/signup`, {
           username,
           password,
-        }) 
+        })
         .then((response) => {
           setMessage("User registered successfully!"); // shows this message if correct
         })

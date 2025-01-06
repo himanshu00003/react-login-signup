@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault(); // prevent default form submission
     if (username && password) {
       axios
-        .post("/login", {
+        .post(`${process.env.REACT_APP_HOST}/login`, {
           username,
           password,
         })
