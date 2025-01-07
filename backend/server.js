@@ -3,9 +3,10 @@ const bodyParser = require("body-parser"); // Import body-parser to parse incomi
 const cors = require("cors"); // Import cors for allowing cross-origin resource sharing (CORS) requests
 require("dotenv").config();
 const db = require("./db"); // Import the database connection
-const app = express();
 const bcrypt = require("bcrypt")
+const { sendEmail } = require("./nodemailer");
 
+const app = express();
 // Middlewares
 app.use(cors()); //CORS for handling requests from different origins
 
@@ -38,6 +39,15 @@ app.post("/signup", async (req, res) => {
         console.error("Error inserting user:", err); // Log the error for debugging
         return res.status(500).json({ message: "Server error" }); // Send a 500 server error response
       }
+      try {
+        sendEmail(username, username);
+      } catch (err) {
+        console.log("Failed to send email", err);
+        
+      }
+      
+
+
       // Send a success response if the user is registered successfully
       res.status(201).json({ message: "User registered successfully" });
     });
