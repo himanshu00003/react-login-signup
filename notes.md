@@ -97,10 +97,8 @@ It is a component which wraps our application and enables navigation between dif
 
 
 
-
-
-
-5. React router class
-6. HTTP status codes and their significance
-7. Different types of deployment environments and their significance
-8. what is .env file and how to use it
+## Questions
+React router class
+HTTP status codes and their significance
+Different types of deployment environments and their significance
+what is .env file and how to use it
