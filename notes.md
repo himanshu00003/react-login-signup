@@ -1,3 +1,19 @@
+## Links
+- [Adding Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+- [.env file in React js](https://medium.com/@bhairabpatra.iitd/env-file-in-react-js-09d11dc77924)
+- [Everything You Need to Know About Deployment Environments](https://www.qovery.com/blog/everything-you-need-to-know-about-deployment-environments/)
+- [Deployment Environments: All You Need to Know](https://www.apwide.com/deployment-environments/)
+- [HTTP response status codes
+](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)
+- [A complete guide to routing in React](https://hygraph.com/blog/routing-in-react)
+- [composing route in react router](https://gist.github.com/mjackson/d54b40a094277b7afdd6b81f51a0393f)
+- [react router wrapper](https://github.com/Ephem/react-router-wrapper)
+- [bcrypt](https://www.freecodecamp.org/news/how-to-hash-passwords-with-bcrypt-in-nodejs/)
+- [How to specify a port to run a create-react-app based project](https://www.geeksforgeeks.org/how-to-specify-a-port-to-run-a-create-react-app-based-project/)
+- [Axios](https://axios-http.com/docs/example)
+
+
+
 ## GitHub
 1. git add .
 2. git commit -m "your message"
