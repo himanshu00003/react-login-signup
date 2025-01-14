@@ -4,7 +4,7 @@ const cors = require("cors"); // Import cors for allowing cross-origin resource 
 require("dotenv").config();
 const db = require("./db"); // Import the database connection
 const bcrypt = require("bcrypt")
-const { sendEmail } = require("./nodemailer");
+// const { sendEmail } = require("./nodemailer");
 
 const app = express();
 // Middlewares
@@ -17,10 +17,10 @@ app.get("/", (req, res) => {
 });
 // Post route for user signup
 app.post("/signup", async (req, res) => {
-  const { username, password } = req.body; // Extract username and password from the request body
+  const { name, username, email, password } = req.body; // Extract username and password from the request body
 
   // Validate if both username and password are provided
-  if (!username || !password) {
+  if (!name || !username || !email || !password) {
     return res
       .status(400) // Return 400 bad request status code if validation fails
       .json({ message: "Please provide username and password" }); // Respond with an error message
@@ -32,19 +32,19 @@ app.post("/signup", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, saltRounds); // Generate the hashed password
 
     // SQL query to insert the new user into the database with the hashed password
-    const query = "INSERT INTO users (username, password) VALUES (?, ?)";
-    db.query(query, [username, hashedPassword], (err, result) => {
+    const query = "INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)";
+    db.query(query, [name, username, email, hashedPassword], (err, result) => {
       if (err) {
         // Handle errors during database operations
         console.error("Error inserting user:", err); // Log the error for debugging
         return res.status(500).json({ message: "Server error" }); // Send a 500 server error response
       }
-      try {
-        sendEmail(username, username);
-      } catch (err) {
-        console.log("Failed to send email", err);
+      // try {
+      //   sendEmail(username, username);
+      // } catch (err) {
+      //   console.log("Failed to send email", err);
         
-      }
+      // }
       
 
 
@@ -88,8 +88,9 @@ app.post("/login", async (req, res) => {
       const isPasswordMatch = await bcrypt.compare(password, storedPassword);
 
       if (isPasswordMatch) {
+        const name = result[0].name;
         // If the passwords match
-        res.status(200).json({ message: "Login Successful" });
+        res.status(200).json({ message: "Login Successful" , name });
       } else {
         // If the passwords don't match
         res.status(401).json({ message: "Invalid Credentials" });
