@@ -1,3 +1,18 @@
+## Links
+- [Adding Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+- [.env file in React js](https://medium.com/@bhairabpatra.iitd/env-file-in-react-js-09d11dc77924)
+- [Everything You Need to Know About Deployment Environments](https://www.qovery.com/blog/everything-you-need-to-know-about-deployment-environments/)
+- [Deployment Environments: All You Need to Know](https://www.apwide.com/deployment-environments/)
+- [HTTP response status codes
+](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#server_error_responses)
+- [A complete guide to routing in React](https://hygraph.com/blog/routing-in-react)
+- [composing route in react router](https://gist.github.com/mjackson/d54b40a094277b7afdd6b81f51a0393f)
+- [react router wrapper](https://github.com/Ephem/react-router-wrapper)
+- [bcrypt](https://www.freecodecamp.org/news/how-to-hash-passwords-with-bcrypt-in-nodejs/)
+- [How to specify a port to run a create-react-app based project](https://www.geeksforgeeks.org/how-to-specify-a-port-to-run-a-create-react-app-based-project/)
+- [Axios](https://axios-http.com/docs/example)
+
+
 ## What is an API and how does it work?
 
 API stands for application programming interface . API acts as a messenger that lets one app talk to another. It allows app to share data with each other.
@@ -170,3 +185,72 @@ Note
 - We should never store plaintext passwords it compromises our security.
 - Hashes are one-way functions. So they can't be decrypted.
 - We should add error handling for both hashing and comparing
+
+
+## Axios
+
+- Axios is a promise based HTTP client for the browser and Nodejs.
+- We have HTTP request from Nodejs and XMLHttpRequests from browser.
+- It allows us to send asynchronous HTTP requests to our backend.
+- It is a javascript library used to make HTTP requests (GET, POST, PUT, PATCH, DELETE) from frontend to a server.
+
+
+- GET REQUEST
+  ```
+  axios.get('http://something.com/data')
+   .then(response => {
+    console.log(response.data);
+   })
+   .catch(error => {
+    console.error('Error', error);
+   });
+  ```
+-POST REQUEST (1)
+
+  `
+  axios.post('something.com/login',{
+    username: 'himanshu',
+    password: '1234'
+  })
+  .then(response=>{
+    console.log('Success', response.data);
+  })
+  .catch(error =>{
+    console.log('Error', error);
+  });
+  `
+
+
+-POST REQUEST (2) Requests can be made by passing the relevant config to axios.
+`
+axios({
+  method: 'post',
+  url: '/user/123',
+  data:{
+    firstname: 'Himanshu',
+    lastname: 'Mehta'
+  }
+})
+`
+
+## Proxy
+
+- A proxy is a middleware that acts as an intermediary between frontend and backend.
+- It is used to forward requests from one server.
+- Its main purpose is to simply API calls and bypass CORS
+- It is commonly used during development to avoid CORS issues by making requests appear as if they are coming from same origin.
+
+##  CORS
+
+- CORS is a security mechanism implemented by browser to restrict cross origin HTTP requests.
+- It ensures that a web application running on (eg. http://localhost:3000) cannot access resources from (eg.  http://localhost:5000) unless the server explicitly allows it.
+- The server must send specific headers like (Access-Control-Allow-Origin) to permit cross origin requests.
+
+Example - 
+
+- My react app is running on  http://localhost:3000
+- My backend API is running on  http://localhost:5000
+- When the frontend ,ales a request to the backend, the browser checks if  http://localhost:5000 allows request from  http://localhost:5000.
+- If the backend dosen't include proper CORS headers, the request is blocled by the browser.
+
+
