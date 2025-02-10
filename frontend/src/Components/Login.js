@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { styles } from "../templates";
 
 const Login = () => {
   const [username, setUsername] = useState(""); // state for username
@@ -8,7 +9,7 @@ const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // state to track if the user is logged in
 
   const handleLogin = (e) => {
-    e.preventDefault(); // prevent default form submission
+    e.preventDefault(); // Prevent default form submission behavior
     if (username && password) {
       axios
         .post(`${process.env.REACT_APP_HOST}/login`, { username, password })
@@ -25,37 +26,42 @@ const Login = () => {
   };
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUsername("");
-    setPassword("");
-    setWelcomeMessage("");
+    setIsLoggedIn(false); // Reset login state
+    setUsername(""); 
+    setPassword(""); 
+    setWelcomeMessage(""); 
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-[#101828]">
+    <div className={styles.pageContainer}>
+      {" "}
+      {/* Main container */}
       {isLoggedIn ? (
-        <div className="p-6 px-9 rounded-xl w-4/12 bg-[#1c2433] text-[#ffffdc] text-center">
-          <h2 className="text-2xl my-4">{welcomeMessage}</h2>
-          <button
-            onClick={handleLogout}
-            className="border-2 py-2 font-semibold border-black w-full rounded-lg bg-[#615fff] text-gray-100"
-          >
+        <div className={styles.cardContainer}>
+          {" "}
+          {/* Logged-in */}
+          <h2 className={styles.welcomeMessage}>{welcomeMessage}</h2>
+          <button onClick={handleLogout} className={styles.button}>
+            {" "}
+            {/* Logout button */}
             Logout
           </button>
         </div>
       ) : (
-        <div className="p-6 px-9 rounded-xl w-4/12">
-          <div className="flex justify-center">
-            <h2 className="text-3xl my-4 text-[#ffffdc]">
-              Login to your account
-            </h2>
+        <div className={styles.cardContainer}>
+          {" "}
+          {/* Login form container */}
+          <div className={styles.textCenter}>
+            <h2 className={styles.loginHeader}>Login to your account</h2>
           </div>
-          <form className="space-y-3" onSubmit={handleLogin}>
+          <form className={styles.formContainer} onSubmit={handleLogin}>
+            {" "}
+            {/* Login form */}
             <div>
-              <label className="text-[#ffffdc]">Username</label>
-              <div className="mt-[5px]">
+              <label className={styles.label}>Username</label>
+              <div className={styles.inputContainer}>
                 <input
-                  className="w-full bg-[#1c2433] rounded-lg text-gray-100 p-2"
+                  className={styles.input}
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -64,10 +70,10 @@ const Login = () => {
               </div>
             </div>
             <div>
-              <label className="text-[#ffffdc]">Password</label>
-              <div className="mt-[5px]">
+              <label className={styles.label}>Password</label>
+              <div className={styles.inputContainer}>
                 <input
-                  className="w-full bg-[#1c2433] rounded-lg text-gray-100 p-2"
+                  className={styles.input}
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -75,20 +81,21 @@ const Login = () => {
                 />
               </div>
             </div>
-            <button
-              className="border-2 py-2 font-semibold border-black w-full rounded-lg bg-[#615fff] text-gray-100"
-              type="submit"
-            >
+            <button className={styles.button} type="submit">
+              {" "}
+              {/* Login button */}
               Login
             </button>
           </form>
           {welcomeMessage && (
-            <p className="mt-3 text-center text-[#7a8995]">{welcomeMessage}</p>
+            <p className={styles.errorMessage}>{welcomeMessage}</p>
           )}
           <div className="flex justify-center text-sm mt-3">
-            <p className="text-[#7a8995]">
+            {" "}
+            {/* Signup link */}
+            <p className={styles.textColorSecondary}>
               Don't have an account?{" "}
-              <a className="text-[#615fff]" href="/signup">
+              <a className={styles.linkColor} href="/">
                 Signup
               </a>
             </p>
